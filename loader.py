@@ -14,7 +14,7 @@
 
 import os
 import sys
-from skauth import SKAuth   # skauth.py must be in the same folder
+from CatCrypt import CatCrypt   # CatCrypt.py must be in the same folder
 
 # ─── CONFIG — change these ────────────────────────────────────────────────────
 APP_ID      = "YOUR_APP_ID_HERE"   # paste your App ID from dashboard
@@ -99,7 +99,7 @@ def require_paid(auth):
 
 def main():
     # Initialize auth
-    auth = SKAuth(APP_ID, APP_VERSION)
+    auth = CatCrypt(APP_ID, APP_VERSION)
 
     # Show login screen until success
     login_screen(auth)
