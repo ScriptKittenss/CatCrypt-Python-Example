@@ -12,7 +12,7 @@
 
 | File | What it is |
 | :--- | :--- |
-| `skauth.py` | Drop-in SDK module — copy it into your project |
+| `CatCrypt.py` | Drop-in SDK module — copy it into your project |
 | `loader.py` | Working CLI loader example (login / register menu) |
 | `requirements.txt` | `requests` |
 
@@ -33,9 +33,9 @@ python loader.py
 ## Use it in your own script
 
 ```python
-from skauth import SKAuth
+from CatCrypt import CatCrypt
 
-auth = SKAuth(app_id="YOUR_APP_ID", version="1.0")
+auth = CatCrypt(app_id="YOUR_APP_ID", version="1.0")
 
 res = auth.login("username", "password")
 if not res.get("ok"):
@@ -52,7 +52,7 @@ if auth.is_paid():
 
 | Method | Description |
 | :--- | :--- |
-| `SKAuth(app_id, version="1.0")` | Create the client. Computes the machine HWID. |
+| `CatCrypt(app_id, version="1.0")` | Create the client. Computes the machine HWID. |
 | `login(username, password)` | Authenticate. On success `auth.user` holds `username`, `plan`, `expires`, `email`, `apiKey`. On failure show `res["message"]` as-is. |
 | `register(username, password, email="", license_key="")` | Create an account. `license_key` is optional. |
 | `redeem(username, license_key)` | Apply a license key to an existing account. |
